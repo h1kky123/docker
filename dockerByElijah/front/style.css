@@ -1,0 +1,551 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 2000px;
+    color: #ffffff;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #121520;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #ffffff !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #ffffff;
+}
+
+.video-bg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-minimal {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 12px 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+}
+
+.btn-minimal:hover {
+    background-color: #141831;
+    color: #fff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.btn-minimal:active {
+    transform: scale(0.95);
+}
+
+.card {
+    background-color: #ffffff; 
+    border-radius: 15px; 
+    padding: 15px; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); 
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    font-size: 1.25rem; 
+    color: #31394e; 
+    font-weight: 600;
+}
+
+.stats {
+    color: #d2def3;
+    line-height: 1;
+    height: 100px;
+}
+
+.stats .ps-3 span {
+    font-weight: 550;
+    letter-spacing: 2px;
+}
+
+.footer {
+    background-color: #141522;
+    padding: 20px;
+    color: #ffffff;
+    text-align: center;
+    border-top: 2px solid #aaaaaa;
+    font-size: 0.9rem;
+    margin-top: auto;   
+    width: 100%;
+}
+
+.footer a {
+    color: #8c909c;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #dbe3fd;
+    text-decoration: underline;
+}
+
+.service-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 300px;
+    padding: 15px;
+    text-align: center;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.service-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.service-card img {
+    align-self: center;
+    width: 40px;
+    height: 40px;
+}
+
+.statistics-container {
+    margin-top: 100px;
+}
+
+.statistics-container .stat-item {
+    margin-bottom: 20px;
+}
+
+.services-section {
+    padding: 40px 0;
+}
+
+.services-section .service-card p {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.services-section .service-card h4 {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.intro-section {
+    text-align: center;
+    color: #000;
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.intro-section h2 {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.intro-section p {
+    font-size: 15px;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+}
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    color: #2e334e;
+    font-family: 'Arial', sans-serif;
+}
+.popup-content h3 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #373e5d;
+    text-align: center;
+    position: relative;
+}
+.popup-content h3::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #b2b6d7;
+    display: block;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+.popup-content .icon {
+    font-size: 2.5rem;
+    color: #9199b2;
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.popup-content form input,
+.popup-content form textarea,
+.popup-content form select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #b2b6d7;
+    background: #f5f6ff;
+    color: #2e334e;
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.popup-content form input:focus,
+.popup-content form textarea:focus,
+.popup-content form select:focus {
+    background: rgb(126,126,167);
+    background: linear-gradient(90deg, rgba(126,126,167,1) 5%, rgba(0,8,121,1) 100%);
+}
+.popup-content form button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    background: rgb(126,126,167);
+    background: linear-gradient(90deg, rgba(126,126,167,1) 5%, rgba(0,8,121,1) 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.popup-content form button:hover {
+    background: rgb(126,126,167);
+    background: linear-gradient(90deg, rgba(126,126,167,1) 5%, rgba(0,8,121,1) 100%);
+}
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #373d5d;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 5px;
+}
+body.no-scroll {
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+}
+
+.popup-content.show {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.popup-content.hide {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+.faq-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.accordion-button {
+    font-size: 16px;
+    font-weight: bold;
+    color: #31354e; 
+    background-color: #f9f9f9; 
+    border: 1px solid #ddd; 
+    padding: 15px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* При раскрытом аккордеоне убираем синий фон */
+.accordion-button:not(.collapsed) {
+    background-color: #f9f9f9 !important;
+    color: #31364e !important;
+}
+
+/* Наведение мышью */
+.accordion-button:hover {
+    background-color: #081635; 
+    color: #ffffff; 
+}
+
+.accordion-body {
+    padding-top: 5px;
+    background-color: #fff; 
+    padding: 20px; 
+    font-size: 15px;
+}
+
+.accordion-item {
+    border-radius: 5px; 
+    overflow: hidden; 
+    border: 1px solid #ddd;
+}
+
+/* Убираем фокус и обводку при клике и переходе в активное состояние */
+.accordion-button:focus,
+.accordion-button:active,
+.accordion-button:focus-visible {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: #31354e !important;
+}
+
+
+
+.reviews-container {
+    background: #f9f9f9;
+    padding: 50px 0;
+}
+
+.reviews-container .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.reviews-container h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #31344e;
+    letter-spacing: 1px;
+}
+
+.review-slide {
+    display: none; 
+}
+
+.review-slide.active {
+    display: block;
+}
+
+.review-inner {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-logo .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00a2e3;
+}
+
+.review-content {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.review-footer {
+    font-size: 13px;
+    color: #666;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.review-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 10px;
+}
+
+@media (min-width: 992px) {
+    .review-navigation {
+        justify-content: flex-end; 
+    }
+}
+
+.slide-indicator {
+    font-size: 14px;
+    color: #333;
+}
+
+.nav-btn {
+    background: #f0f0f0;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover {
+    background: #e0e0e0;
+}
+
+.embedded-form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    color: #2e334e;
+    font-family: 'Arial', sans-serif;
+}
+.embedded-form h3 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #373e5d;
+    text-align: center;
+    position: relative;
+}
+.embedded-form h3::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #b2b6d7;
+    display: block;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+.embedded-form form input,
+.embedded-form form textarea,
+.embedded-form form select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #b2b8d7;
+    background: #f5f6ff;
+    color: #2e314e;
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.embedded-form form input:focus,
+.embedded-form form textarea:focus,
+.embedded-form form select:focus {
+    border-color: #9199b2;
+    box-shadow: 0 0 5px rgba(145, 148, 178, 0.5);
+}
+.embedded-form form button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 1rem;
+    background: rgb(51,51,69);
+    background: linear-gradient(90deg, rgba(51,51,69,1) 5%, rgba(5,7,57,1) 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.embedded-form form button:hover {
+    background: rgb(59,59,84);
+    background: linear-gradient(90deg, rgba(59,59,84,1) 5%, rgba(10,14,77,1) 100%);
+}
+
+@media (min-width: 992px) {
+    .reviews-container .container {
+        max-width: 800px !important;
+    }
+}
